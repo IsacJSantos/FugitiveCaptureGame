@@ -32,7 +32,7 @@ public class FlashLightController : MonoBehaviour
         hit = Physics2D.Raycast(transform.position, Vector3.forward, 10f);
         if (hit.collider)
         {
-            print(hit.collider.name);
+           // print(hit.collider.name);
         }
     }
     void Movement() 
