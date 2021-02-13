@@ -9,6 +9,8 @@ public class FlashLightController : MonoBehaviour
 
     Rigidbody2D _rigid;
 
+    RaycastHit2D hit;
+
     float horizontalInput;
     float verticalInput;
 
@@ -22,8 +24,17 @@ public class FlashLightController : MonoBehaviour
     void Update()
     {
         Movement();
+        RayVerification();
     }
 
+    void RayVerification() 
+    {
+        hit = Physics2D.Raycast(transform.position, Vector3.forward, 10f);
+        if (hit.collider)
+        {
+            print(hit.collider.name);
+        }
+    }
     void Movement() 
     {
         horizontalInput = Input.GetAxis("Horizontal");
