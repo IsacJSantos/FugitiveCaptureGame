@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _signalPrefab: {fileID: 2340660406848917155, guid: e6032826c9fbed14d8f9c925bb290c01, type: 3}
+  _score: 10
 --- !u!61 &3221843181860988208
 BoxCollider2D:
   m_ObjectHideFlags: 0
