@@ -8,6 +8,9 @@ public class JailController : MonoBehaviour
     Transform[] _spawnPositions;
 
     [SerializeField]
+    Transform[] _escapeAreas;
+
+    [SerializeField]
     GameObject _fugitivePrefab;
 
     [SerializeField]
@@ -19,9 +22,11 @@ public class JailController : MonoBehaviour
     {
         if (time < Time.time)
         {
-            int ramdomIndex = Random.Range(0, _spawnPositions.Length);
+            int ramdomIndexPosition = Random.Range(0, _spawnPositions.Length);
+            int randomIndexEscape = Random.Range(0, _escapeAreas.Length);
 
-            Instantiate(_fugitivePrefab, _spawnPositions[ramdomIndex].position, Quaternion.identity);
+           GameObject fugitive = Instantiate(_fugitivePrefab, _spawnPositions[ramdomIndexPosition].position, Quaternion.identity);
+           fugitive.GetComponent<FugitiveController>().target = _escapeAreas[randomIndexEscape].position;
 
             time = Time.time + _spawnCooldown;
         }
