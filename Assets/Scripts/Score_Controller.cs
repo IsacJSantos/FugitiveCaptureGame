@@ -9,7 +9,12 @@ public  class Score_Controller : MonoBehaviour
 
     public static Score_Controller Instance { get { return _instance; } }
 
+    [SerializeField]
+    private Text _scoreUi, _escapeText;
+ 
     private int _totalScore;
+    [SerializeField]
+    private int _totalEscapes;
 
     private void Awake()
     {
@@ -22,13 +27,22 @@ public  class Score_Controller : MonoBehaviour
             _instance = this;
         }
     }
-
-    [SerializeField]
-    private Text _scoreUi;
+  
 
     public void ToScore(int points)
     {
         _totalScore += points;
         _scoreUi.text = "Score: " + _totalScore;
+    }
+
+    public void EscapePoint() 
+    {
+        _totalEscapes++;
+        _escapeText.text = "Escapes: " + _totalEscapes + "/10";
+        if (_totalEscapes >= 10) 
+        {
+            _totalEscapes = 10;
+            Time.timeScale = 0;
+        }
     }
 }

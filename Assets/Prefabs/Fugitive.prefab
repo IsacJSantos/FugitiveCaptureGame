@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39bcbfc71e18d2145a3fa852974105da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {x: 0, y: 0, z: 0}
   _signalPrefab: {fileID: 2340660406848917155, guid: e6032826c9fbed14d8f9c925bb290c01, type: 3}
+  _speed: 1.3
   _score: 10
 --- !u!61 &3221843181860988208
 BoxCollider2D:
