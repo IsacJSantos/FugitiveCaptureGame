@@ -10933,6 +10933,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2125298244}
     - target: {fileID: 7034104184655567499, guid: b71375e9094edea438db71ca794d3331, type: 3}
+      propertyPath: MaxEscapes
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7034104184655567499, guid: b71375e9094edea438db71ca794d3331, type: 3}
       propertyPath: _escapeText
       value: 
       objectReference: {fileID: 669910733}
