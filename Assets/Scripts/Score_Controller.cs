@@ -8,12 +8,14 @@ public  class Score_Controller : MonoBehaviour
     private static Score_Controller _instance;
 
     public static Score_Controller Instance { get { return _instance; } }
-
+    [SerializeField]
+    private int MaxEscapes;
     [SerializeField]
     private Text _scoreUi, _escapeText;
- 
+
+
+
     private int _totalScore;
-    [SerializeField]
     private int _totalEscapes;
 
     private void Awake()
@@ -27,7 +29,11 @@ public  class Score_Controller : MonoBehaviour
             _instance = this;
         }
     }
-  
+
+    private void Start()
+    {
+        _escapeText.text = "Escapes: " + _totalEscapes + "/" + MaxEscapes;
+    }
 
     public void ToScore(int points)
     {
@@ -38,11 +44,11 @@ public  class Score_Controller : MonoBehaviour
     public void EscapePoint() 
     {
         _totalEscapes++;
-        _escapeText.text = "Escapes: " + _totalEscapes + "/10";
-        if (_totalEscapes >= 10) 
+        _escapeText.text = "Escapes: " + _totalEscapes + "/"+ MaxEscapes;
+        if (_totalEscapes >= MaxEscapes) 
         {
-            _totalEscapes = 10;
-            Time.timeScale = 0;
+            _totalEscapes = MaxEscapes;
+           // Time.timeScale = 0;
         }
     }
 }
