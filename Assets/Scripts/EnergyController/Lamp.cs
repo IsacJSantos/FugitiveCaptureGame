@@ -10,20 +10,17 @@ public class Lamp : MonoBehaviour
     int _energyCost;
     [SerializeField]
     Energy_Management _energyManag;
-
+    [SerializeField]
     GameObject _lampLightObj;
 
-    private void Start()
-    {
-        _lampLightObj = GetComponentInChildren<GameObject>(); 
-    }
     public void OnOff(bool value) 
     {
         _on = value;
-
+        _lampLightObj.SetActive(_on);
         if (_on)
         {
             _energyManag.SetConsumption(_energyCost);
+            
         }
         else
         {

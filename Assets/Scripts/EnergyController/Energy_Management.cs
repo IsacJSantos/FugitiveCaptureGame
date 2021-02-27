@@ -11,7 +11,7 @@ public class Energy_Management : MonoBehaviour
     [SerializeField]
     int _totalConsumption;
 
-
+    float time;
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +25,11 @@ public class Energy_Management : MonoBehaviour
 
     void Consume() 
     {
-        // execute this once for ConsumRate 
-        Battery.Instance.SetCharger(_totalConsumption - _chargerRate);
+        if (time < Time.time)
+        {
+            time = Time.time + _consumRate;
+            Battery.Instance.SetCharger(_chargerRate - _totalConsumption);
+        }
+       
     }
 }

@@ -32,7 +32,7 @@ public class FugitiveController : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target, _speed * Time.deltaTime);
             yield return null;
         }
-        print("Saiu do while");
+       
         _canCapture = false;
         _isMoving = false;
         Escape();

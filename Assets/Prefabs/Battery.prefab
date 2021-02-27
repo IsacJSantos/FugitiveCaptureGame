@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce74c4907df9694bad3224135585d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _charger: 0
+  _charger: 100
+  _chargerlimit: 100

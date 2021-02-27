@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6249eef1b0d223a42bfed007b1580eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _chargerRate: 0
-  _consumRate: 0
+  _chargerRate: 5
+  _consumRate: 1
   _totalConsumption: 0
