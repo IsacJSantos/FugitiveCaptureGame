@@ -8,6 +8,8 @@ public class Sector : MonoBehaviour
 
     [SerializeField]
     Lamp[] _lamps;
+    [SerializeField]
+    GameObject _colliders;
 
     public void GenerateFugitive() 
     {
@@ -16,6 +18,7 @@ public class Sector : MonoBehaviour
     public void lampOnOff(bool value) 
     {
         StartCoroutine(TurnLampsOnOff(value));
+        _colliders.SetActive(!value);
     }
     IEnumerator TurnLampsOnOff(bool value) 
     {

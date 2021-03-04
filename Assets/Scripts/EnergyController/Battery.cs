@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Battery : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Battery : MonoBehaviour
     int _chargerlimit;
     private static Battery _instance;
 
+    public Text ChargerText;
     public static Battery Instance { get { return _instance; } }
 
     private void Awake()
@@ -44,6 +46,6 @@ public class Battery : MonoBehaviour
         {
             _charger = 0;          
         }
-        
+        ChargerText.text = "Charger: " + _charger.ToString();
     }
 }
