@@ -11,6 +11,7 @@ public class Energy_Management : MonoBehaviour
     [SerializeField]
     int _totalConsumption;
 
+
     float time;
     // Update is called once per frame
     void Update()
@@ -21,6 +22,7 @@ public class Energy_Management : MonoBehaviour
     public void SetConsumption(int usage) 
     {
         _totalConsumption += usage;
+       
     }
 
     void Consume() 
@@ -32,4 +34,6 @@ public class Energy_Management : MonoBehaviour
         }
        
     }
+
+
 }
