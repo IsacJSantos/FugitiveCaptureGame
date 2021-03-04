@@ -23,12 +23,12 @@ public class Battery : MonoBehaviour
             _instance = this;
         }
     }
-
+   
     private void Start()
     {
         _charger = _chargerlimit;
     }
-
+   
     public int GetUsage()
     {
         return _charger;
@@ -42,7 +42,7 @@ public class Battery : MonoBehaviour
         }
         else if(_charger <= 0)
         {
-            _charger = 0;
+            _charger = 0;          
         }
         
     }
